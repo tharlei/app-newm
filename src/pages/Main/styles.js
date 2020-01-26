@@ -2,13 +2,11 @@ import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
-	flex: 1;
-	padding: 30px;
+	padding: 30px 30px 15px 30px;
 `;
 
 export const Form = styled.View`
 	flex-direction: row;
-	padding-bottom: 20px;
 	border-bottom-width: 1px;
 	border-color: #eee;
 `;
@@ -25,15 +23,6 @@ export const Input = styled.TextInput.attrs({
 	margin-right: 12px;
 `;
 
-export const FormButtons = styled.View`
-	flex-direction: row;
-	padding: 20px 0 20px;
-	width: 100%;
-	justify-content: space-around;
-	align-items: center;
-
-`;
-
 export const SubmitButton = styled(RectButton)`
 	width: 70px;
 	height: 40px;
@@ -45,47 +34,67 @@ export const SubmitButton = styled(RectButton)`
 	opacity: ${props => (props.loading ? 0.7 : 1)}
 `;
 
-export const List = styled.FlatList`
-	margin-top: 20px;
-`;
-
-export const Client = styled.View`
-	align-items: center;
-	margin: 0 20px 30px;
-`;
-
 export const Name = styled.Text`
 	font-size: 14px;
 	color: #333;
 	font-weight: bold;
-	margin-top: 4px;
 	text-align: center;
 `;
 
-export const Email = styled.Text`
-`;
-
-export const Phone = styled.Text`
-`;
-
-export const Document = styled.Text`
+export const SmallInfo = styled.Text`
+	font-size: 12px;
 `;
 
 export const Note = styled.Text`
+	font-size: 11px;
+	margin-top: 10px;
+	text-align: justify;
 `;
 
 export const EditButton = styled(RectButton)`
-	width: 80px;
-	height: 40px;
 	border-radius: 4px;
-	padding: 0 12px;
+	padding: 10px;
 	background: #6c757d;
 `;
 
 export const DeleteButton = styled(RectButton)`
-	width: 80px;
-	height: 40px;
+	padding: 10px;
 	border-radius: 4px;
-	padding: 0 12px;
 	background: #dc3545;
+`;
+
+export const Badge = styled.Text`
+	margin-top: 30px;
+	padding: 5%;
+	border-radius: 4px;
+	background: #ffc107;
+	color: #fff;
+`;
+
+export const ContainerList = styled.View`
+`;
+
+export const List = styled.FlatList`
+	margin: 0 0 15% 0;
+`;
+
+export const Client = styled.View`
+	padding: 30px;
+	border: 1px solid #eee;
+`;
+
+export const Row = styled.View`
+	flex-direction: row;
+`;
+
+export const Info = styled.View`
+	width: 80%;
+	min-height: 100px;
+	max-width: 80%;
+`;
+
+export const ClientButtons = styled.View`
+	max-width: 20%;
+	justify-content: space-around;
+	margin-left: 20px;
 `;
