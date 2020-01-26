@@ -62,7 +62,7 @@ export default function Client({ navigation }) {
 		}
 
 		let clients = await AsyncStorage.getItem('clients');
-		clients = JSON.parse(clients);
+		clients = clients ? JSON.parse(clients) : [];
 
 		if (id) clients = clients.filter(client => client.id !== id);
 

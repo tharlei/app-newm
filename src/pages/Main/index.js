@@ -26,7 +26,8 @@ function Main({ isFocused, navigation }) {
 	 */
 	async function readClients() {
 		if (!loading) setLoading(true);
-		let storage = await AsyncStorage.getItem('clients');
+		let storage;
+		storage = await AsyncStorage.getItem('clients');
 		if (storage) {
 			storage = JSON.parse(storage);
 			setClients(storage);
@@ -42,15 +43,17 @@ function Main({ isFocused, navigation }) {
 	async function handleSearch(text) {
 		setSearch(text);
 		let filtersClients = await readClients();
-		setLoading(true);
-		if (text && filtersClients.length) {
-			filtersClients = filtersClients.filter(client =>
-				client.name.toLowerCase().includes(text.toLowerCase()) 
-				|| client.email.toLowerCase().includes(text.toLowerCase())
-			);
+		if (filtersClients) {
+			setLoading(true);
+			if (text && filtersClients.length) {
+				filtersClients = filtersClients.filter(client =>
+					client.name.toLowerCase().includes(text.toLowerCase()) 
+					|| client.email.toLowerCase().includes(text.toLowerCase())
+				);
+			}
+			setClients(filtersClients);
+			setLoading(false);
 		}
-		setClients(filtersClients);
-		setLoading(false)
 	}
 
 	/**

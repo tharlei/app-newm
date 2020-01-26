@@ -30,4 +30,4 @@ npm run android-dev
 
 ## Download android app
 
-_On http://_
+_On https://drive.google.com/open?id=1cx_6Uu8V4pRL3WAXC0H0uUb1uUt6mn7Z_
